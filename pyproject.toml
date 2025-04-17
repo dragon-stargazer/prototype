@@ -1,0 +1,5 @@
+[tool.mypy]
+cache_dir = "~/.cache/mypy"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

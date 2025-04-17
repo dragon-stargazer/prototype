@@ -1,0 +1,8 @@
+services:
+  valkey:
+    image: valkey/valkey:8.1
+    labels:
+      managed-by: docker-compose
+    ports:
+      - 6379:6379
+    restart: always
