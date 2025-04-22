@@ -1,8 +1,16 @@
 services:
   valkey:
+    command:
+      - valkey-server
+      - /etc/valkey/valkey.conf
     image: valkey/valkey:8.1
     labels:
       managed-by: docker-compose
+    network_mode: host
     ports:
       - 6379:6379
     restart: always
+    volumes:
+      - source: ./hack/valkey.conf
+        target: /etc/valkey/valkey.conf
+        type: bind
